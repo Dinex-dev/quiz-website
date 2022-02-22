@@ -1,6 +1,6 @@
 var qno=0
-const url = "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
-//'http://127.0.0.1:5500/javascript/quiz/api.json'
+const url = 'http://127.0.0.1:5500/javascript/quiz/api.json'
+//"https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
 
 fetch(url).then(function (response){
     return response.json();
