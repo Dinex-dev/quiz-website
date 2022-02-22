@@ -31,7 +31,11 @@ body{
   background-color: #fcc822;
   color: white  ;
 }
-
+.correct-option:hover{
+  background-color: #dfb21e;
+  color: white  ;
+  border: solid 1px #3a3939;
+}
 .option-list{
     display: flex;
     flex-direction: row;
@@ -44,7 +48,7 @@ body{
 #question{
   background-color: #fcc822;
   padding: 50px;
-  font-family: poppins;
+
 }
 .display{
     display: contents;
