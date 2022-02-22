@@ -1,42 +1,33 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Quiz</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div id="loader" class="loader"></div>
 
-      <div class="container hidden" class="bg-dark" id="disp">
-          <h1 class="display-1" style="text-align:center;">Quiz</h1>
-          <div class="container questions bg-gradient-dark">
-              <h1 class="display-3" id="question-number"></h1>
-                <h1 class="" id="question"></h1>
-                
-                <div class="card">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <button type="button" class="btn btn-primary" id="option1"></button>
-                    </div>
-                    <div class="col-sm-6">
-                      <button type="button" class="btn btn-primary" id="option2"></button>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <button type="button" class="btn btn-primary" id="option3"></button>
-                    </div>
-                    <div class="col-sm-6">
-                      <button type="button" class="btn btn-primary" id="option4"></button>
-                    </div>
-                  </div>
-          </div>
+<head>
+  <title>Quiz</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="loader" class="loader"></div>
+
+  <div class="container-fluid hidden" id="disp">
+    <h1 class="display-1" style="text-align:center;">Quiz</h1>
+    <div class="container-fluid quiz-box">
+      <h3 class="container-fluid"id="question"></h3>
+      <div class="">
+        <button type="button" class="options" id="option1"></button>
+        <button type="button" class="options" id="option2"></button>
+        <button type="button" class="options" id="option3"></button>
+        <button type="button" class="options" id="option4"></button>
       </div>
-      <script src="script.js"></script>
-  </body>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
