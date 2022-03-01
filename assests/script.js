@@ -40,5 +40,13 @@ function previous(data) {
         console.log("something fishy");
     }
 }
-
+function optionChecker(option) {
+    if (qrs[option] == x.results[qno].correct_answer) {
+        document.getElementById("option"+(option+1)).className = 'options correct-option';
+    }
+    else {
+        document.getElementById("option" + (option+1)).className = 'options incorrect-option';       
+    }
+    
+}
 setQuiz(x);
