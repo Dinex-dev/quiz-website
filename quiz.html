@@ -50,15 +50,20 @@
     <h1 class="display-1" style="text-align:center;">Quiz</h1>
     <div class="container-fluid quiz-box">
       <h3 class="container-fluid" id="question"></h3>
-      
+      (
       <div class="row option-list">
-        <div class="col"><button type="button" class="options correct-option" id="option1"></button></div>
-        <div class="col"><button type="button" class="options" id="option2"></button></div>
-        <div class="col"><button type="button" class="options" id="option3"></button></div>
-        <div class="col"><button type="button" class="options" id="option4"></button></div>
+        <div class="col"><button type="button" class="options" onclick="optionChecker(0)" id="option1"></button></div>
+        <div class="col"><button type="button" class="options" onclick="optionChecker(1)" id="option2"></button></div>
+        <div class="col"><button type="button" class="options" onclick="optionChecker(2)" id="option3"></button></div>
+        <div class="col"><button type="button" class="options" onclick="optionChecker(3)" id="option4"></button></div>
       </div>
     </div>
+
+    <div class="container-fluid">
+      <button type="button" class="btn btn-primary" id="previous" onclick="previous(x)">Previous</button>
+      <button type="button" class="btn btn-primary" id="next" onclick="next(x)">Next</button>
   </div>
+
   <script src="assests/script.js"></script>
 
   <img src="images/vector.svg" class="vector1">
