@@ -1,4 +1,4 @@
-var qno = 0;
+var qno = 0, correct=0,wrong=0;
 function sleep(milliseconds) {
     const date = Date.now();
     let currentDate = null;
@@ -21,6 +21,14 @@ function setQuiz(data) {
     document.getElementById("option4").innerHTML = qrs[3];
     document.getElementById("disp").className = 'container-fluid display';
     document.getElementById("loader").className = 'hidden';
+    document.getElementById("option1").className = 'options';
+    document.getElementById("option2").className = 'options';
+    document.getElementById("option3").className = 'options';
+    document.getElementById("option4").className = 'options';
+    document.getElementById("correct").innerHTML = "Correct : "+correct;
+    document.getElementById("wrong").innerHTML = "Wrong : "+wrong;
+    document.getElementById("final-correct").innerHTML = "Correct : "+correct;
+    document.getElementById("final-wrong").innerHTML = "Wrong : "+wrong;
 }
 function next(data) {
     if (qno < 9 && qno >= 0) {
@@ -28,7 +36,8 @@ function next(data) {
         setQuiz(data)   
     }
     else {
-        console.log("something fishy");
+        document.getElementById("disp").className = 'container-fluid hidden ';
+        document.getElementById("result").className = 'display';
     }
 }
 function previous(data) {
@@ -41,12 +50,16 @@ function previous(data) {
     }
 }
 function optionChecker(option) {
-    if (qrs[option] == x.results[qno].correct_answer) {
-        document.getElementById("option"+(option+1)).className = 'options correct-option';
+    if (option == qrs[0]) {
+        correct++;
+        sleep(500);
+        next(x);
     }
     else {
-        document.getElementById("option" + (option+1)).className = 'options incorrect-option';       
+        wrong++;
+        sleep(500);
+        next(x);
     }
-    
 }
+ 
 setQuiz(x);

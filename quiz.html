@@ -13,44 +13,23 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Quiz</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div id="loader" class="loader"></div>
 
+  <div id="loader" class="loader"></div>
+  <div id="result" class="hidden">
+    <div class="container-fluid">
+      <div class="display-1" style="color: black;">Result</div>
+      <div class="display-4">
+        <span class="point" id="final-correct"></span>
+        <span class="point" id="final-wrong"></span>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid hidden" id="disp">
-    <h1 class="display-1" style="text-align:center;">Quiz</h1>
+    <h1 class="point" id="correct" style="float:left">correct</h1>
+    <h1 class="point" id="wrong" style="float: right;">correct</h1>
+    <h1 class="display-1" style="text-align:center; color: black;">Quiz</h1>
     <div class="container-fluid quiz-box">
       <h3 class="container-fluid" id="question"></h3>
-      (
       <div class="row option-list">
         <div class="col"><button type="button" class="options" onclick="optionChecker(0)" id="option1"></button></div>
         <div class="col"><button type="button" class="options" onclick="optionChecker(1)" id="option2"></button></div>
@@ -62,11 +41,11 @@
     <div class="container-fluid">
       <button type="button" class="btn btn-primary" id="previous" onclick="previous(x)">Previous</button>
       <button type="button" class="btn btn-primary" id="next" onclick="next(x)">Next</button>
-  </div>
+    </div>
 
-  <script src="assests/script.js"></script>
+    <script src="assests/script.js"></script>
 
-  <img src="images/vector.svg" class="vector1">
+    <img src="images/vector.svg" class="vector1">
 </body>
 
 </html>
