@@ -1,99 +1,31 @@
-var qno = 0,correct = 0,wrong = 0;
+var qno = 0,correct = 0,wrong = 0,x;
 var SelectedOption = 10;
 const difficulty=["easy","medium","hard"];
-var url;
+var url,raw=0;
+async function apiget(url){
+    const response = await fetch(url);
+    raw = await response.json();
+    x=raw;
+    startquiz();
+    }
 function categorySelection(cat){
     category=cat;
     document.getElementById("category-box").className="hidden";
-    document.getElementById("difficulty-box").className="display";
+    document.getElementById("difficulty-box").className="container";
 
 }
 function difficultySelection(def){
     url="https://opentdb.com/api.php?amount=10&category="+category+"&difficulty="+difficulty[def]+"&type=multiple";
     console.log(url);
-    startquiz();
+    document.getElementById("difficulty-box").className="hidden";
+    document.getElementById("loader").className="display"
+    apiget(url);
 }
 function showCategory(){
     document.getElementById("welcome").className="hidden";
     document.getElementById("category-box").className="container display";
 }
 
-
-
-x = {
-    "response_code": 0,
-    "results": [{
-        "category": "General Knowledge",
-        "type": "multiple",
-        "difficulty": "easy",
-        "question": "Area 51 is located in which US state?",
-        "correct_answer": "Nevada",
-        "incorrect_answers": ["Arizona", "New Mexico", "Utah"]
-    }, {
-        "category": "General Knowledge",
-        "type": "multiple",
-        "difficulty": "easy",
-        "question": "What is &quot;dabbing&quot;?",
-        "correct_answer": "A dance",
-        "incorrect_answers": ["A medical procedure", "A sport", "A language"]
-    }, {
-        "category": "General Knowledge",
-        "type": "multiple",
-        "difficulty": "easy",
-        "question": "What is the shape of the toy invented by Hungarian professor Ern\u0151 Rubik?",
-        "correct_answer": "Cube",
-        "incorrect_answers": ["Sphere", "Cylinder", "Pyramid"]
-    }, {
-        "category": "General Knowledge",
-        "type": "multiple",
-        "difficulty": "easy",
-        "question": "What is the nickname of the US state of California?",
-        "correct_answer": "Golden State",
-        "incorrect_answers": ["Sunshine State", "Bay State", "Treasure State"]
-    }, {
-        "category": "General Knowledge",
-        "type": "multiple",
-        "difficulty": "easy",
-        "question": "What is on display in the Madame Tussaud&#039;s museum in London?",
-        "correct_answer": "Wax sculptures",
-        "incorrect_answers": ["Designer clothing", "Unreleased film reels", "Vintage cars"]
-    }, {
-        "category": "General Knowledge",
-        "type": "multiple",
-        "difficulty": "easy",
-        "question": "Who is depicted on the US hundred dollar bill?",
-        "correct_answer": "Benjamin Franklin",
-        "incorrect_answers": ["George Washington", "Abraham Lincoln", "Thomas Jefferson"]
-    }, {
-        "category": "General Knowledge",
-        "type": "multiple",
-        "difficulty": "easy",
-        "question": "What do the letters in the GMT time zone stand for?",
-        "correct_answer": "Greenwich Mean Time",
-        "incorrect_answers": ["Global Meridian Time", "General Median Time", "Glasgow Man Time"]
-    }, {
-        "category": "General Knowledge",
-        "type": "multiple",
-        "difficulty": "easy",
-        "question": "Which American-owned brewery led the country in sales by volume in 2015?",
-        "correct_answer": "D. G. Yuengling and Son, Inc",
-        "incorrect_answers": ["Anheuser Busch", "Boston Beer Company", "Miller Coors"]
-    }, {
-        "category": "General Knowledge",
-        "type": "multiple",
-        "difficulty": "easy",
-        "question": "What do the letters of the fast food chain KFC stand for?",
-        "correct_answer": "Kentucky Fried Chicken",
-        "incorrect_answers": ["Kentucky Fresh Cheese", "Kibbled Freaky Cow", "Kiwi Food Cut"]
-    }, {
-        "category": "General Knowledge",
-        "type": "multiple",
-        "difficulty": "easy",
-        "question": "In which fast food chain can you order a Jamocha Shake?",
-        "correct_answer": "Arby&#039;s",
-        "incorrect_answers": ["McDonald&#039;s", "Burger King", "Wendy&#039;s"]
-    }]
-}
 qrs = []
 function setQuiz(data) {
     document.getElementById("question").innerHTML = 'Q.' + (qno + 1) + ' ' + data.results[qno].question;
@@ -169,9 +101,12 @@ function submit(option) {
     document.getElementById("option4").disabled = true;
     SelectedOption=99;
 }
-setQuiz(x);
 
 function startquiz(){
     document.getElementById("difficulty-box").className = 'hidden';
     document.getElementById("quiz").className="quiz display";
+    document.getElementById("loader").className="hidden"
+    setQuiz(x);
 }
+document.getElementById("difficulty-box").className = 'hidden';
+document.getElementById("category-box").className= 'hidden';

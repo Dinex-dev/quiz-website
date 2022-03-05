@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <img src="images/loading.svg" id="loader" class="hidden">
   <div class="homepage" id="homepage">
     <nav class="navbar navbar-expand navbar-light"
       style="background-color: yellow; color: blueviolet; margin-bottom: 2em;">
@@ -42,24 +43,24 @@
       <h1 class="text-center" style="color: yellow;">Categories</h1>
       <div class="row">
         <div class="col">
-          <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Geography</button>
+          <button class="btn btn-lg btn-info" onclick="categorySelection(22)">Geography</button>
         </div>
         <div class="col">
-          <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Movies</button>
+          <button class="btn btn-lg btn-info" onclick="categorySelection(11)">Movies</button>
         </div>
         <div class="col">
-          <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Mythology</button>
+          <button class="btn btn-lg btn-info" onclick="categorySelection(20)">Mythology</button>
         </div>
       </div>
       <div class="row">
       <div class="col">
-        <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Computers</button>
+        <button class="btn btn-lg btn-info" onclick="categorySelection(18)">Computers</button>
         </div>
         <div class="col">
-      <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Sports</button>
+      <button class="btn btn-lg btn-info" onclick="categorySelection(21)">Sports</button>
       </div>
       <div class="col">
-      <button class="btn btn-lg btn-info" onclick="categorySelection(0)">General knowledge</button>
+      <button class="btn btn-lg btn-info" onclick="categorySelection(9)">General knowledge</button>
       </div>
       </div>
       <div class="row">
@@ -75,7 +76,7 @@
       </div>
     </div>
     <!--difficulty selection-->
-    <div class="container" id="difficulty-box" style="background-color: blueviolet;padding: 2em;">
+    <div class="container" id="difficulty-box">
       <h1 class="text-center" style="color: yellow;">Difficulty</h1>
       <div class="row">
         <div class="col">
@@ -88,6 +89,7 @@
           <button class="btn btn-lg btn-info" onclick="difficultySelection(2)">Hard</button>
         </div>
       </div>
+    </div>
   </div>
 
 
