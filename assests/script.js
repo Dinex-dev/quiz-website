@@ -1,6 +1,7 @@
 var qno = 0,correct = 0,wrong = 0;
 var SelectedOption = 10;
-const url = "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+const difficulty=["easy","medium","hard"];
+const url="https://opentdb.com/api.php?amount=10&category="+category+"&difficulty="+difficulty[0]+"&type=multiple"
 // 'http://127.0.0.1:5500/javascript/quiz/api.json'
 x = {
     "response_code": 0,
@@ -87,7 +88,6 @@ function setQuiz(data) {
     document.getElementById("option3").innerHTML = qrs[2];
     document.getElementById("option4").innerHTML = qrs[3];
     document.getElementById("disp").className = 'container-fluid display';
-    document.getElementById("loader").className = 'hidden';
     document.getElementById("option1").className = 'options';
     document.getElementById("option2").className = 'options';
     document.getElementById("option3").className = 'options';
@@ -151,3 +151,9 @@ function submit(option) {
     SelectedOption=99;
 }
 setQuiz(x);
+
+function startquiz(){
+    document.getElementById("homepage").className="hidden";
+    document.getElementById("quiz").className="quiz";
+    
+}
