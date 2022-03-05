@@ -13,27 +13,85 @@
 </head>
 
 <body>
-  <div class="homepage"id="homepage">
-    <nav class="navbar navbar-expand navbar-light" style="background-color: yellow; color: blueviolet; margin-bottom: 2em;">
+  <div class="homepage" id="homepage">
+    <nav class="navbar navbar-expand navbar-light"
+      style="background-color: yellow; color: blueviolet; margin-bottom: 2em;">
       <div class="nav navbar-nav">
         <a class="nav-item nav-link active" href="#">Quiz <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link" href="#">Categories</a>
       </div>
     </nav>
-    <div class="container">
+    <div class="container" id="welcome">
       <div class="row">
         <div class="col-lg-12 col-md-12 text-sm-center">
           <div class="card" style="color: yellow;background-color: blueviolet;">
-          <div class="card-header"><h1 class="display-2 ">Quiz</h1></div>
-          <h1 class="card-body">Put your wizarding knowledge to the test with curious quizzes for all levels</h1>
+            <div class="card-header">
+              <h1 class="display-3 ">Quiz</h1>
+            </div>
+            <h2 class="card-body">Put your wizarding knowledge to the test with curious quizzes for all levels</h2>
             <div class="card-link" style="padding: 30px;">
-              <a class="btn btn-lg" style="background-color: yellow;color: blueviolet;" onclick="startquiz()">Start Quiz</a>
+              <a class="btn btn-lg" style="background-color: yellow;color: blueviolet;" onclick="showCategory()">Start
+                Quiz</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
+    <!--category selection form-->
+    <div class="container" id="category-box" style="background-color: blueviolet;padding: 2em;">
+      <h1 class="text-center" style="color: yellow;">Categories</h1>
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Geography</button>
+        </div>
+        <div class="col">
+          <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Movies</button>
+        </div>
+        <div class="col">
+          <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Mythology</button>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col">
+        <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Computers</button>
+        </div>
+        <div class="col">
+      <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Sports</button>
+      </div>
+      <div class="col">
+      <button class="btn btn-lg btn-info" onclick="categorySelection(0)">General knowledge</button>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col">
+      <button class="btn btn-lg btn-info" onclick="categorySelection(0)">History</button>
+      </div>
+      <div class="col">
+      <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Music</button>
+      </div>
+      <div class="col">
+        <button class="btn btn-lg btn-info" onclick="categorySelection(0)">Science & Nature</button>
+      </div>
+      </div>
+    </div>
+    <!--difficulty selection-->
+    <div class="container" id="difficulty-box" style="background-color: blueviolet;padding: 2em;">
+      <h1 class="text-center" style="color: yellow;">Difficulty</h1>
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-lg btn-info" onclick="difficultySelection(0)">Easy</button>
+        </div>
+        <div class="col">
+          <button class="btn btn-lg btn-info" onclick="difficultySelection(1)">Medium</button>
+        </div>
+        <div class="col">
+          <button class="btn btn-lg btn-info" onclick="difficultySelection(2)">Hard</button>
+        </div>
+      </div>
+  </div>
+
+
+
 
   <div class="quiz hidden" id="quiz">
     <div id="result" class="hidden">
@@ -41,10 +99,10 @@
         <div class="display-1" style="color: black;">Result</div>
         <div class="row">
           <div class="col">
-          <span class="display-4 point" id="final-correct"></span>
+            <span class="display-4 point" id="final-correct"></span>
           </div>
           <div class="col">
-          <span class="display-4 point" id="final-wrong"></span>
+            <span class="display-4 point" id="final-wrong"></span>
           </div>
         </div>
       </div>

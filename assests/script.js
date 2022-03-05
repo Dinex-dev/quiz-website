@@ -1,8 +1,25 @@
 var qno = 0,correct = 0,wrong = 0;
 var SelectedOption = 10;
 const difficulty=["easy","medium","hard"];
-const url="https://opentdb.com/api.php?amount=10&category="+category+"&difficulty="+difficulty[0]+"&type=multiple"
-// 'http://127.0.0.1:5500/javascript/quiz/api.json'
+var url;
+function categorySelection(cat){
+    category=cat;
+    document.getElementById("category-box").className="hidden";
+    document.getElementById("difficulty-box").className="display";
+
+}
+function difficultySelection(def){
+    url="https://opentdb.com/api.php?amount=10&category="+category+"&difficulty="+difficulty[def]+"&type=multiple";
+    console.log(url);
+    startquiz();
+}
+function showCategory(){
+    document.getElementById("welcome").className="hidden";
+    document.getElementById("category-box").className="container display";
+}
+
+
+
 x = {
     "response_code": 0,
     "results": [{
@@ -97,6 +114,8 @@ function setQuiz(data) {
     document.getElementById("final-correct").innerHTML = "Correct : " + correct;
     document.getElementById("final-wrong").innerHTML = "Wrong : " + wrong;
     document.getElementById("submit").disabled = true;
+    document.getElementById("category-box").className = 'hidden';
+    document.getElementById("difficulty-box").className = 'hidden';
 }
 function next(data) {
     if (qno < 9 && qno >= 0) {
@@ -153,7 +172,6 @@ function submit(option) {
 setQuiz(x);
 
 function startquiz(){
-    document.getElementById("homepage").className="hidden";
-    document.getElementById("quiz").className="quiz";
-    
+    document.getElementById("difficulty-box").className = 'hidden';
+    document.getElementById("quiz").className="quiz display";
 }
