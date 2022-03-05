@@ -96,12 +96,14 @@ function setQuiz(data) {
     document.getElementById("wrong").innerHTML = "Wrong : " + wrong;
     document.getElementById("final-correct").innerHTML = "Correct : " + correct;
     document.getElementById("final-wrong").innerHTML = "Wrong : " + wrong;
+    document.getElementById("submit").disabled = true;
 }
 function next(data) {
     if (qno < 9 && qno >= 0) {
         qno++;
         setQuiz(data);
         document.getElementById("submit").className = "btn btn-primary";
+        document.getElementById("submit").disabled = true;
         document.getElementById("next").className = "hidden";
         document.getElementById("option1").disabled = false;
         document.getElementById("option2").disabled = false;
@@ -127,6 +129,8 @@ function optionChecker(option) {
     document.getElementById("option3").className = 'options';
     document.getElementById("option4").className = 'options';
     document.getElementById("option" + (option + 1)).className = 'options option-selected';
+    document.getElementById("submit").disabled = false;
+    
 }
 function submit(option) {
     if (qrs[option] == x.results[qno].correct_answer) {
@@ -144,5 +148,6 @@ function submit(option) {
     document.getElementById("option2").disabled = true;
     document.getElementById("option3").disabled = true;
     document.getElementById("option4").disabled = true;
+    SelectedOption=99;
 }
 setQuiz(x);
