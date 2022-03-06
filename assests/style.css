@@ -1,12 +1,43 @@
-body {
-  margin: 0%;
-  padding: 0%;
-}
+body{
+  /*background-image: url(images/BGSVG.svg);*/
+  /*background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M0%2c477.294C90.042%2c478.755%2c113.846%2c343.121%2c185.215%2c288.201C247.77%2c240.064%2c344.654%2c242.894%2c389.243%2c177.762C435.623%2c110.014%2c444.589%2c18.549%2c424.276%2c-61.002C404.744%2c-137.496%2c326.304%2c-178.929%2c281.557%2c-243.971C229.257%2c-319.991%2c225.689%2c-442.117%2c139.468%2c-474.984C54.373%2c-507.422%2c-30.356%2c-426.112%2c-116.151%2c-395.574C-196.332%2c-367.034%2c-292.914%2c-366.42%2c-347.943%2c-301.494C-402.861%2c-236.7%2c-400.696%2c-142.775%2c-402.392%2c-57.855C-403.925%2c18.872%2c-399.038%2c98.789%2c-357.224%2c163.139C-317.854%2c223.727%2c-235.651%2c234.535%2c-181.392%2c282.252C-113.343%2c342.096%2c-90.608%2c475.824%2c0%2c477.294' fill='%230b2239'%3e%3c/path%3e%3cpath d='M1440 1107.4850000000001C1544.535 1111.842 1643.5149999999999 1069.983 1734.101 1017.63 1828.1309999999999 963.2860000000001 1940.258 906.347 1969.161 801.66 1997.955 697.3679999999999 1900.968 602.74 1877.827 497.05 1856.987 401.87 1902.423 288.2 1840.304 213.135 1778.152 138.031 1657.286 162.85500000000002 1568.307 123.02600000000001 1459.765 74.44 1380.78-54.158000000000015 1262.165-45.650999999999954 1143.787-37.160999999999945 1053.232 68.48599999999999 984.06 164.926 918.528 256.29 875.906 368.134 884.99 480.202 893.345 583.281 982.2239999999999 655.61 1031.216 746.686 1076.216 830.3399999999999 1090.027 930.896 1161.2440000000001 993.7529999999999 1238.039 1061.534 1337.66 1103.219 1440 1107.4850000000001' fill='%23113255'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");*/
+  background-image: url('../images/shapes.svg');
+  background-attachment: fixed;
+  transition: ease-in 1s;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
 
 .quiz {
   color: white;
   text-align: center;
   animation: fadein 2s;
+}
+.start{
+  font-size: 2vw;
+  border-radius: 0%;
+  background-color: white;
+  color: black;
+  padding: 0% 2vw 0% 2vw;
+  box-shadow: #c1931d 9px 10px 0px;
+}
+.start:hover{
+  box-shadow: none;
+  transition: ease-in-out .4s;
+  background-color: white;
+  color: black;
+  transform: translate(0%, 2%);
+}
+.centout{
+  margin-top: 10vw;
+}
+@media screen and (max-width: 600px) {
+  .start {
+    font-size: 7vw;
+  }
+  .centout{
+    margin-top: 20vw;
+  }
 }
 #correct {
   color: green;
@@ -25,7 +56,7 @@ body {
 }
 
 .point {
-  margin: 1em;  
+  font-size: xx-large;
 }
 
 .options {
@@ -70,17 +101,8 @@ body {
   color: white;
   animation: fadein 0.5s;
 }
-#difficulty-box {
-  background-color: blueviolet;
-  padding: 3rem;
-}
-#loader{
-  position: fixed;
-  top: 50%;
-  bottom: 50%;
-  left: 50%;
-  right: 50%;
-}
+
+
 #question {
   background-color: #fcc822;
   padding: 50px;
@@ -113,8 +135,56 @@ body {
   from {opacity:0;}
   to {opacity:1;}
 }
+.fadein{
+  animation: fadein 1s; 
+}
 .homepage{
   animation-name: fadein;
   animation-duration: 2s;
 }
+.display-1{
+  font-weight: 1000;
+  font-size: 10vw;
+  text-shadow: 3px 3px yellow  ;
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+.display-2{
+  font-weight: 800;
+  font-size: 4vw;
+  text-shadow: 3px 3px red  ;
+  color: yellow;
+}
+.difficulty-text{
+  font-size: 5vw;
+  font-weight: 800;
+  text-shadow : rgb(203, 255, 118) 3px 3px;
+  color:#f11212;
+  margin-bottom: 3vw;
+}
+@media screen and (max-width: 600px) {
+  .display-1 {
+    font-size: 20vw;
+  }
+  .display-2{
+    font-size: 10vw;
+  }
+}
+.lead{
+  font-size: 3vw; 
+}
 
+
+@keyframes slideleft{
+  from {
+    
+  }
+  to {
+    
+  }
+}
+.slideleft{
+  animation: slideleft 1s;
+  transition: ease-in-out 1s;
+}
+}

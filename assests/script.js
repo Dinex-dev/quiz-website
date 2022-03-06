@@ -11,6 +11,7 @@ async function apiget(url){
 function categorySelection(cat){
     category=cat;
     document.getElementById("category-box").className="hidden";
+    document.getElementsByTagName("body")[0].style.backgroundImage="url('../images/hexagon.svg')";
     document.getElementById("difficulty-box").className="container";
 
 }
@@ -18,12 +19,14 @@ function difficultySelection(def){
     url="https://opentdb.com/api.php?amount=10&category="+category+"&difficulty="+difficulty[def]+"&type=multiple";
     console.log(url);
     document.getElementById("difficulty-box").className="hidden";
+    document.getElementsByTagName("body")[0].style.backgroundImage="url('../images/background.svg')";
     document.getElementById("loader").className="display"
     apiget(url);
 }
 function showCategory(){
     document.getElementById("welcome").className="hidden";
     document.getElementById("category-box").className="container display";
+    document.getElementsByTagName("body")[0].style.backgroundImage="url('../images/pattern.svg')";
 }
 
 qrs = []
@@ -89,6 +92,12 @@ function submit(option) {
         correct++;
     } else {
         document.getElementById("option" + (option + 1)).className = 'options incorrect-option';
+        for (let i = 0; i <= 3; i++) {
+            if (qrs[i] == x.results[qno].correct_answer) {
+                document.getElementById("option" + (i + 1)).className = 'options correct-option';
+                break;
+            }                       
+        }
         wrong++;
     }
     document.getElementById("submit").className = 'hidden';

@@ -9,38 +9,28 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assests/style.css">
 </head>
 
 <body>
   <img src="images/loading.svg" id="loader" class="hidden">
+  <br><br><br><br><br><br><br>
   <div class="homepage" id="homepage">
-    <nav class="navbar navbar-expand navbar-light"
-      style="background-color: yellow; color: blueviolet; margin-bottom: 2em;">
-      <div class="nav navbar-nav">
-        <a class="nav-item nav-link active" href="#">Quiz <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">Categories</a>
-      </div>
-    </nav>
-    <div class="container" id="welcome">
+    <div class="container slideleft align" id="welcome">
       <div class="row">
-        <div class="col-lg-12 col-md-12 text-sm-center">
-          <div class="card" style="color: yellow;background-color: blueviolet;">
-            <div class="card-header">
-              <h1 class="display-3 ">Quiz</h1>
-            </div>
-            <h2 class="card-body">Put your wizarding knowledge to the test with curious quizzes for all levels</h2>
-            <div class="card-link" style="padding: 30px;">
-              <a class="btn btn-lg" style="background-color: yellow;color: blueviolet;" onclick="showCategory()">Start
-                Quiz</a>
-            </div>
-          </div>
+        <div class="col-md-12">
+          <h1 class="display-1 text-center "> 
+            <span class="text-primary">Quiz</span>
+            <span class="text-danger">App</span>
+          </h1> 
+          <center class="centout"><button class="btn btn-primary start" id="start" onclick="showCategory()">Start Quiz</button></center>
         </div>
       </div>
     </div>
     <!--category selection form-->
-    <div class="container" id="category-box" style="background-color: blueviolet;padding: 2em;">
-      <h1 class="text-center" style="color: yellow;">Categories</h1>
+    <div class="container" id="category-box">
+      <h1 class="text-center display-2">Select one of the Categories</h1>
       <div class="row">
         <div class="col">
           <button class="btn btn-lg btn-info" onclick="categorySelection(22)">Geography</button>
@@ -77,16 +67,16 @@
     </div>
     <!--difficulty selection-->
     <div class="container" id="difficulty-box">
-      <h1 class="text-center" style="color: yellow;">Difficulty</h1>
+      <h1 class="text-center difficulty-text">Select Difficulty</h1>
       <div class="row">
         <div class="col">
-          <button class="btn btn-lg btn-info" onclick="difficultySelection(0)">Easy</button>
+          <button class="btn btn-lg btn-info btn-primary" onclick="difficultySelection(0)">Easy</button>
         </div>
         <div class="col">
-          <button class="btn btn-lg btn-info" onclick="difficultySelection(1)">Medium</button>
+          <button class="btn btn-lg btn-info btn-warning" onclick="difficultySelection(1)">Medium</button>
         </div>
         <div class="col">
-          <button class="btn btn-lg btn-info" onclick="difficultySelection(2)">Hard</button>
+          <button class="btn btn-lg btn-info btn-danger" onclick="difficultySelection(2)">Hard</button>
         </div>
       </div>
     </div>
@@ -110,8 +100,17 @@
       </div>
     </div>
     <div class="container-fluid hidden" id="disp">
-      <h1 class="point" id="correct" style="float:left">correct</h1>
-      <h1 class="point" id="wrong" style="float: right;">correct</h1>
+      <div class="container-fluid">
+      <div class="row">
+        <div class="col-2">
+        <h1 class="point" id="correct">correct</h1>
+        </div>
+        <div class="col-8"></div>
+        <div class="col-2">
+        <h1 class="point" id="wrong">wrong</h1>
+        </div>
+    </div>
+      </div>
       <h1 class="display-1" style="text-align:center; color: black;">Quiz</h1>
       <div class="container-fluid quiz-box">
         <h3 class="container-fluid flip-2-hor-top-1 " id="question"></h3>
