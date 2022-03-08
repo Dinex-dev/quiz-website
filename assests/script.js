@@ -11,7 +11,7 @@ async function apiget(url){
 function categorySelection(cat){
     category=cat;
     document.getElementById("category-box").className="hidden";
-    document.getElementsByTagName("body")[0].style.backgroundImage="url('../images/hexagon.svg')";
+    document.getElementsByTagName("body")[0].style.backgroundImage="url('images/hexagon.svg')";
     document.getElementById("difficulty-box").className="container";
 
 }
@@ -19,14 +19,14 @@ function difficultySelection(def){
     url="https://opentdb.com/api.php?amount=10&category="+category+"&difficulty="+difficulty[def]+"&type=multiple";
     console.log(url);
     document.getElementById("difficulty-box").className="hidden";
-    document.getElementsByTagName("body")[0].style.backgroundImage="url('../images/background.svg')";
+    document.getElementsByTagName("body")[0].style.backgroundImage="url('images/background.svg')";
     document.getElementById("loader").className="display"
     apiget(url);
 }
 function showCategory(){
     document.getElementById("welcome").className="hidden";
-    document.getElementById("category-box").className="container display";
-    document.getElementsByTagName("body")[0].style.backgroundImage="url('../images/pattern.svg')";
+    document.getElementById("category-box").className="container display fadein";
+    document.getElementsByTagName("body")[0].style.backgroundImage="url('images/pattern.svg')";
 }
 
 qrs = []
@@ -44,7 +44,7 @@ function setQuiz(data) {
     document.getElementById("option2").className = 'options';
     document.getElementById("option3").className = 'options';
     document.getElementById("option4").className = 'options';
-    document.getElementById("correct").innerHTML = "Correct : " + correct;
+    document.getElementById("correct").innerHTML = "Score : " + correct;
     document.getElementById("wrong").innerHTML = "Wrong : " + wrong;
     document.getElementById("final-correct").innerHTML = "Correct : " + correct;
     document.getElementById("final-wrong").innerHTML = "Wrong : " + wrong;
@@ -102,7 +102,7 @@ function submit(option) {
     }
     document.getElementById("submit").className = 'hidden';
     document.getElementById("next").className = 'btn btn-primary';
-    document.getElementById("correct").innerHTML = "Correct : " + correct;
+    document.getElementById("correct").innerHTML = "Score : " + correct;
     document.getElementById("wrong").innerHTML = "Wrong : " + wrong;
     document.getElementById("option1").disabled = true;
     document.getElementById("option2").disabled = true;
