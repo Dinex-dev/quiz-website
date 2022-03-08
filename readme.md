@@ -2,4 +2,4 @@
 
 # ❗This is still under ⚒️​development⚒️​❗​​
 
-This is a built made using  [opentdb](https://opentdb.com/) api
+This is made using  [opentdb](https://opentdb.com/) api
