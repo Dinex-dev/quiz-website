@@ -13,7 +13,6 @@ function categorySelection(cat){
     document.getElementById("category-box").className="hidden";
     document.getElementsByTagName("body")[0].style.backgroundImage="url('images/hexagon.svg')";
     document.getElementById("difficulty-box").className="container";
-
 }
 function difficultySelection(def){
     url="https://opentdb.com/api.php?amount=10&category="+category+"&difficulty="+difficulty[def]+"&type=multiple";
