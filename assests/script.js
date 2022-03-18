@@ -55,7 +55,7 @@ function next(data) {
     if (qno < 9 && qno >= 0) {
         qno++;
         setQuiz(data);
-        document.getElementById("submit").className = "btn btn-primary";
+        document.getElementById("submit").className = "btn btn-lg btn-primary";
         document.getElementById("submit").disabled = true;
         document.getElementById("next").className = "hidden";
         document.getElementById("option1").disabled = false;
@@ -100,7 +100,7 @@ function submit(option) {
         wrong++;
     }
     document.getElementById("submit").className = 'hidden';
-    document.getElementById("next").className = 'btn btn-primary';
+    document.getElementById("next").className = 'btn btn-lg btn-primary';
     document.getElementById("correct").innerHTML = "Score : " + correct;
     document.getElementById("wrong").innerHTML = "Wrong : " + wrong;
     document.getElementById("option1").disabled = true;
@@ -118,3 +118,6 @@ function startquiz(){
 }
 document.getElementById("difficulty-box").className = 'hidden';
 document.getElementById("category-box").className= 'hidden';
+Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+    document.getElementById("homepage").className = 'homepage display';
+});

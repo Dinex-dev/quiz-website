@@ -9,6 +9,7 @@ body{
 .quiz {
   color: white;
   text-align: center;
+  margin-top: 10%;
   animation: fadein 2s;
 }
 .start{
@@ -103,6 +104,7 @@ body{
 
 
 #question {
+  /*background-image: linear-gradient(to left, #8f00cd, #0a4cfb);*/
   background-color: #fcc822;
   padding: 50px;
 
@@ -139,7 +141,7 @@ body{
 .display-1{
   font-weight: 1000;
   font-size: 10vw;
-  text-shadow: 3px 3px yellow  ;
+  text-shadow: 3px 3px  yellow;
   color: white;
   -webkit-text-stroke: 2px black;
 }
