@@ -6,5 +6,4 @@ I made this small Quiz as my college project here are some screenshots of the we
 - ## Screenshort 2
 ![screenshort](images/screenshort-2.png "screenshort 2")
 
-<<<<<<< HEAD
 
