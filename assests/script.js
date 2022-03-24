@@ -1,19 +1,27 @@
+
+// varialbles
 var qno = 0,correct = 0,wrong = 0,x;
 var SelectedOption = 10;
 const difficulty=["easy","medium","hard"];
 var url,raw=0;
+
+//function to get data from api
 async function apiget(url){
     const response = await fetch(url);
     raw = await response.json();
     x=raw;
     startquiz();
     }
+
+//function to get category
 function categorySelection(cat){
     category=cat;
     document.getElementById("category-box").className="hidden";
     document.getElementsByTagName("body")[0].style.backgroundImage="url('images/hexagon.svg')";
     document.getElementById("difficulty-box").className="container";
 }
+
+//function to get difficulty
 function difficultySelection(def){
     url="https://opentdb.com/api.php?amount=10&category="+category+"&difficulty="+difficulty[def]+"&type=multiple";
     console.log(url);
@@ -22,6 +30,8 @@ function difficultySelection(def){
     document.getElementById("loader").className="display"
     apiget(url);
 }
+
+//function to show category
 function showCategory(){
     document.getElementById("welcome").className="hidden";
     document.getElementById("category-box").className="container display fadein";
@@ -29,6 +39,9 @@ function showCategory(){
 }
 
 qrs = []
+
+//function to set the quiz
+
 function setQuiz(data) {
     document.getElementById("question").innerHTML = 'Q.' + (qno + 1) + ' ' + data.results[qno].question;
     qrs = [x.results[qno].correct_answer, x.results[qno].incorrect_answers[0], x.results[qno].incorrect_answers[1], x.results[qno].incorrect_answers[2]]
@@ -51,6 +64,8 @@ function setQuiz(data) {
     document.getElementById("category-box").className = 'hidden';
     document.getElementById("difficulty-box").className = 'hidden';
 }
+
+//function to show the next question
 function next(data) {
     if (qno < 9 && qno >= 0) {
         qno++;
@@ -75,6 +90,8 @@ function previous(data) {
         console.log("something fishy");
     }
 }
+
+//function to check the submitted option
 function optionChecker(option) {
     SelectedOption = option;
     document.getElementById("option1").className = 'options';
@@ -85,6 +102,8 @@ function optionChecker(option) {
     document.getElementById("submit").disabled = false;
     
 }
+
+//function to submit the selected option
 function submit(option) {
     if (qrs[option] == x.results[qno].correct_answer) {
         document.getElementById("option" + (option + 1)).className = 'options correct-option';
@@ -110,14 +129,18 @@ function submit(option) {
     SelectedOption=99;
 }
 
+//function to start the quiz
 function startquiz(){
     document.getElementById("difficulty-box").className = 'hidden';
     document.getElementById("quiz").className="quiz display";
     document.getElementById("loader").className="hidden"
     setQuiz(x);
 }
+
 document.getElementById("difficulty-box").className = 'hidden';
 document.getElementById("category-box").className= 'hidden';
+
+// to make sure all the images are loaded
 Promise.all(Array.from(document.images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
     document.getElementById("homepage").className = 'homepage display';
 });
